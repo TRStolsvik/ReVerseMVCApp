@@ -71,20 +71,13 @@ footer .social > a {
         opacity: 30%;
     }
 
-.jscolor {
-    color: #f0db4f;
+.techLogos {
+    max-height: 6rem;
+    max-width: auto;
 }
 
-.bscolor {
-    color: #8312fa;
-}
-
-.html5color {
-    color: #e44d26;
-}
-
-.css3color {
-    color: #0a71b8;
+.techStack {
+    padding: 0 1rem 0 1rem;
 }
 
 @media screen and (max-width: 767px) {
