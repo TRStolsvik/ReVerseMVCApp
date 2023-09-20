@@ -1,6 +1,7 @@
 ﻿using ReVerseMVC.Models;
 using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
+using ReVerseMVC.Logic;
 
 namespace ReVerseMVC.Controllers
 {
@@ -18,9 +19,20 @@ namespace ReVerseMVC.Controllers
             return View();
         }
 
+        [HttpGet]
         public IActionResult App()
         {
-            return View();
+            StringReverse stringRev = new();
+
+            return View(stringRev);
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public IActionResult App(StringReverse input)
+        {
+            string output = "";
+            return View(output);
         }
 
         public IActionResult Code()

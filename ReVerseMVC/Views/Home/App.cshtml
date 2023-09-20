@@ -1,3 +1,64 @@
 ﻿<main class="flex-shrink-0">
-    <div class="container">APP CODE GOES HERE!</div>
+    <div class="container">
+        <div class="row">
+            <div class="col-12 col-md-6 border-md-end border-black">
+                <h1 class="border-bottom border-black">
+                    ReVerse MVC: A Coding Project
+                </h1>
+                <p class="lead">
+                    Can you say that 10 times fast?<br />
+                    How about backwards?<br />
+                    ReVerse is a coding project for practicing JavaScript
+                    fundamentals, and this time, we're reversing strings.
+                </p>
+                <h2 class="mt-5 border-bottom border-black">Instructions</h2>
+                <p>
+                    Write a word or a sentence (or any kind of string of text) in the
+                    input field and hit the button. Watch as the output of the string
+                    becomes a direct reversal of what the input was.
+                </p>
+            </div>
+            <div class="col-12 col-md-6">
+                <div id="javascriptVersion" class="accordion mt-2">
+                    <div class="accordion-item bg-secondary-subtle">
+                        <h3 class="accordion-header">
+                            <button type="button"
+                                    data-bs-toggle="collapse"
+                                    data-bs-target="#javascriptVersionBody"
+                                    aria-expanded="true"
+                                    aria-controls="javascriptVersionBody"
+                                    class="accordion-button bg-primary text-light">
+                                JavaScript version
+                            </button>
+                        </h3>
+                        <div id="javascriptVersionBody"
+                             class="accordion-collapse collapse">
+                            <div class="accordion-body">
+                                <div class="row row-cols-1 row-cols-md-2">
+                                    <div class="col col-md-8">
+                                        <form>
+                                            <label for="inputString" class="form-label">Enter a word, sentence or any type of string of text:</label>
+                                            <input id="inputString" type="text" class="form-control" />
+                                            <div class="text-end mt-2">
+                                                <button id="btnSubmit"
+                                                        type="button"
+                                                        class="btn btn-primary btn-lg">
+                                                    ReVerse the string
+                                                </button>
+                                            </div>
+                                            <div class="mt-5">
+                                                <h3 class="border-bottom border-black">Results</h3>
+                                                <p id="results"></p>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
 </main>
