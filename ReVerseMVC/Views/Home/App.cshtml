@@ -19,6 +19,44 @@
                 </p>
             </div>
             <div class="col-12 col-md-6">
+                <div id="cSharpVersion" class="accordion mt-2">
+                    <div class="accordion-item bg-secondary-subtle">
+                        <h3 class="accordion-header">
+                            <button type="button"
+                                    data-bs-toggle="collapse"
+                                    data-bs-target="#cSharpVersionBody"
+                                    aria-expanded="true"
+                                    aria-controls="cSharpVersionBody"
+                                    class="accordion-button bg-primary text-light">
+                                C# version
+                            </button>
+                        </h3>
+                        <div id="cSharpVersionBody"
+                             class="accordion-collapse collapse show">
+                            <div class="accordion-body">
+                                <div class="row row-cols-1 row-cols-md-2">
+                                    <div class="col col-md-8">
+                                        <form>
+                                            <label for="csInputString" class="form-label">Enter a word, sentence or any type of string of text:</label>
+                                            <input id="csInputString" type="text" class="form-control" />
+                                            <div class="text-end mt-2">
+                                                <button id="csSubmit"
+                                                        type="submit"
+                                                        class="btn btn-primary btn-lg">
+                                                    ReVerse the string
+                                                </button>
+                                            </div>
+                                            <div class="mt-5">
+                                                <h3 class="border-bottom border-black">Results</h3>
+                                                <p id="csResults"></p>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
                 <div id="javascriptVersion" class="accordion mt-2">
                     <div class="accordion-item bg-secondary-subtle">
                         <h3 class="accordion-header">
@@ -57,7 +95,6 @@
                         </div>
                     </div>
                 </div>
-
             </div>
         </div>
     </div>
