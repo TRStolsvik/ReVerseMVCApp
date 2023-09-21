@@ -1,7 +1,7 @@
 ﻿<main class="flex-shrink-0">
     <div class="container">
         <h2 class="border-1 border-bottom border-dark">
-            The Code for ReVerse MVC is structured in XX functions.
+            The Code for ReVerse MVC is structured in 3 (5) functions. See also the code for the view and model structure.
         </h2>
         <div id="accordionItemOne" class="accordion mt-2">
             <div class="accordion-item bg-secondary-subtle">
@@ -12,7 +12,7 @@
                             aria-expanded="true"
                             aria-controls="accordionPanelOne"
                             class="accordion-button bg-primary text-light">
-                        Function Name #1
+                        GetString()
                     </button>
                 </h3>
                 <div id="accordionPanelOne"
@@ -20,18 +20,33 @@
                     <div class="accordion-body">
                         <div class="row row-cols-1 row-cols-md-2">
                             <div class="col col-md-8">
-                                <pre data-start="1"><code class="language-javascript">
-                            // Call Hello World!
-                            function HelloWorld() {
-                                alert('Hello World!');
-                            }                                            
-                        </code></pre>
+                                <pre data-start="1"><code class="language-dotnet">
+                                    public static string GetString(ReVerse reVerse)
+                                    {
+                                        string output = "";
+
+                                        string revString = ReverseString(reVerse.StartString);
+
+                                        return output = DisplayString(revString);
+                                    }
+                                </code></pre>
                             </div>
                             <div class="col col-md-4">
-                                <h5>HelloWorld()</h5>
+                                <h5>GetString()</h5>
                                 <p>
-                                    Hello World is a function that displays an alert with a
-                                    message of "Hello World!"
+                                    The function GetString() takes in the fresh ReVerse object as a parameter.
+                                </p>
+                                <p>
+                                    We start by declaring an empty string to hold our output.
+                                </p>
+                                <p>
+                                    Next we declare a string to hold our reversed string, and call the function ReverseString() and assign it's returned value to the string. We pass the StartString property of the revString object to it.
+                                </p>
+                                <p>
+                                    Finally we return the output which will have the return value from DisplayString() assigned to it. This function takes in the reversed string as a parameter.
+                                </p>
+                                <p>
+                                    A note on the final line of the function.<br />Since we already reversed the string, we could simply return it because we don't actually do any work on it in the DisplayString() function however, for the purposes of practice and having the concept of "separation of concern" in mind we do it the same way as with many (most) of these other practice projects, which has the "DisplayFunction" do a little work to the returned result before display.
                                 </p>
                             </div>
                         </div>
@@ -48,25 +63,263 @@
                             aria-expanded="true"
                             aria-controls="accordionPanelTwo"
                             class="accordion-button bg-primary text-light">
-                        Function Name #2
+                        ReverseString()
                     </button>
                 </h3>
                 <div id="accordionPanelTwo" class="accordion-collapse collapse">
                     <div class="accordion-body">
                         <div class="row row-cols-1 row-cols-md-2">
                             <div class="col col-md-8">
-                                <pre data-start="5"><code class="language-javascript">
-                            // Call Hello World!
-                            function HelloWorld() {
-                                alert('Hello World!');
-                            }                                            
-                        </code></pre>
+                                <pre data-start="5"><code class="language-dotnet">
+                                    public static string ReverseString(string input)
+                                    {
+                                        string output = "";
+
+                                        char[] chars = input.ToCharArray();
+
+                                        for (int i = chars.Length - 1; i > -1; i--)
+                                        {
+                                            output += chars[i];
+                                        }
+
+                                        return output;
+                                    }
+                                </code></pre>
                             </div>
                             <div class="col col-md-4">
-                                <h5>HelloWorld()</h5>
+                                <h5>ReverseString()</h5>
                                 <p>
-                                    Hello World is a function that displays an alert with a
-                                    message of "Hello World!"
+                                    The function ReverseString() takes in the input from the page as a parameter.
+                                </p>
+                                <p>
+                                    Starting off we declare an empty string called output to hold our... output.
+                                </p>
+                                <p>
+                                    Next we declare a character array called chars and assign the input to it, which we also convert to a character array.
+                                </p>
+                                <p>
+                                    Now we do a for-loop which starts at the end of the character array, which is designated by the "-1", which basically means to go backwards over the indexes. This loop will iterate in reverse (--) for as long as the index i is greater than -1.
+                                    The reason for this is that we are doing sero-based counting, so the last index (remember this is reversed) will be 0.
+                                </p>
+                                <p>
+                                    Inside the loop, we will append (+=) the current index [i] to our output string.
+                                </p>
+                                <p>
+                                    Finally we return the now reversed string.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="accordionItemThree" class="accordion mt-2">
+            <div class="accordion-item bg-secondary-subtle">
+                <h3 class="accordion-header">
+                    <button type="button"
+                            data-bs-toggle="collapse"
+                            data-bs-target="#accordionPanelThree"
+                            aria-expanded="true"
+                            aria-controls="accordionPanelThree"
+                            class="accordion-button bg-primary text-light">
+                        DisplayString()
+                    </button>
+                </h3>
+                <div id="accordionPanelThree"
+                     class="accordion-collapse collapse">
+                    <div class="accordion-body">
+                        <div class="row row-cols-1 row-cols-md-2">
+                            <div class="col col-md-8">
+                                <pre data-start="1"><code class="language-dotnet">
+                                    public static string DisplayString(string revString)
+                                    {
+                                        return revString;
+                                    }
+                                </code></pre>
+                            </div>
+                            <div class="col col-md-4">
+                                <h5>DisplayString()</h5>
+                                <p>
+                                    The function DisplayString() has an easy job this time, which is just to return the reversed string it gets passed as a parameter.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="accordionItemFour" class="accordion mt-2">
+            <div class="accordion-item bg-secondary-subtle">
+                <h3 class="accordion-header">
+                    <button type="button"
+                            data-bs-toggle="collapse"
+                            data-bs-target="#accordionPanelFour"
+                            aria-expanded="true"
+                            aria-controls="accordionPanelFour"
+                            class="accordion-button bg-primary text-light">
+                        App() // HttpGet
+                    </button>
+                </h3>
+                <div id="accordionPanelFour"
+                     class="accordion-collapse collapse">
+                    <div class="accordion-body">
+                        <div class="row row-cols-1 row-cols-md-2">
+                            <div class="col col-md-8">
+                                <pre data-start="1"><code class="language-dotnet">
+                                    [HttpGet]
+                                    public IActionResult App()
+                                    {
+                                        ReVerse model = new();
+
+                                        return View(model);
+                                    }
+                                </code></pre>
+                            </div>
+                            <div class="col col-md-4">
+                                <h5>App() // GET</h5>
+                                <p>
+                                    The "get" action of the App() method of the controller instantiates a new object of the ReVerse model.
+                                </p>
+                                <p>
+                                    Finally the object is returned to the view for further use.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="accordionItemFive" class="accordion mt-2">
+            <div class="accordion-item bg-secondary-subtle">
+                <h3 class="accordion-header">
+                    <button type="button"
+                            data-bs-toggle="collapse"
+                            data-bs-target="#accordionPanelFive"
+                            aria-expanded="true"
+                            aria-controls="accordionPanelFive"
+                            class="accordion-button bg-primary text-light">
+                        App() // HttpPost
+                    </button>
+                </h3>
+                <div id="accordionPanelFive"
+                     class="accordion-collapse collapse">
+                    <div class="accordion-body">
+                        <div class="row row-cols-1 row-cols-md-2">
+                            <div class="col col-md-8">
+                                <pre data-start="1"><code class="language-dotnet">
+                                    [HttpPost]
+                                    [ValidateAntiForgeryToken]
+                                    public IActionResult App(ReVerse reVerse)
+                                    {
+                                        reVerse.RevString = StringReverse.GetString(reVerse);
+
+                                        return View(reVerse);
+                                    }
+                                </code></pre>
+                            </div>
+                            <div class="col col-md-4">
+                                <h5>App() // POST</h5>
+                                <p>
+                                    The "post" action of the App() method of the controller takes in the ReVerse object and fires off the GetString() function, passing in the reVerse object.
+                                </p>
+                                <p>
+                                    The returned result is stored in the RevString property of the reVerse object.
+                                </p>
+                                <p>
+                                    Finally the reVerse object is returned to the view.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="accordionItemSix" class="accordion mt-2">
+            <div class="accordion-item bg-secondary-subtle">
+                <h3 class="accordion-header">
+                    <button type="button"
+                            data-bs-toggle="collapse"
+                            data-bs-target="#accordionPanelSix"
+                            aria-expanded="true"
+                            aria-controls="accordionPanelSix"
+                            class="accordion-button bg-primary text-light">
+                        App view
+                    </button>
+                </h3>
+                <div id="accordionPanelSix"
+                     class="accordion-collapse collapse">
+                    <div class="accordion-body">
+                        <div class="row row-cols-1 row-cols-md-2">
+                            <div class="col col-md-8">
+                                <pre data-start="1"><code class="language-dotnet">
+                                    &lt;form asp-controller="Home" asp-action="App" method="post">
+                                        &lt;label asp-for="StartString" class="form-label">
+                                            Enter a word, sentence or any type of string of text:&lt;/label>
+                                            &lt;input asp-for="StartString"
+                                                type="text"
+                                                value="@@Model.StartString"
+                                                class="form-control" />
+                                            &lt;div class="text-end mt-2">
+                                                &lt;button id="csSubmit"
+                                                    type="submit"
+                                                    class="btn btn-primary btn-lg">
+                                                    ReVerse the string
+                                                &lt;/button>
+                                            &lt;/div>
+                                        &lt;div class="mt-5">
+                                            &lt;h3 class="border-bottom border-black">
+                                            Results&lt;/h3>
+                                            &lt;p id="csResults">@@Model.RevString&lt;/p>
+                                        &lt;/div>
+                                    &lt;/form>
+                                </code></pre>
+                            </div>
+                            <div class="col col-md-4">
+                                <h5>App view</h5>
+                                <p>
+                                    The App view contains the form where we input the string and post back the output.
+                                </p>
+                                <p>
+                                    These are the @@Model.StartString and @@Model.RevString respectively.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="accordionItemSeven" class="accordion mt-2">
+            <div class="accordion-item bg-secondary-subtle">
+                <h3 class="accordion-header">
+                    <button type="button"
+                            data-bs-toggle="collapse"
+                            data-bs-target="#accordionPanelSeven"
+                            aria-expanded="true"
+                            aria-controls="accordionPanelSeven"
+                            class="accordion-button bg-primary text-light">
+                        ReVerse model
+                    </button>
+                </h3>
+                <div id="accordionPanelSeven"
+                     class="accordion-collapse collapse">
+                    <div class="accordion-body">
+                        <div class="row row-cols-1 row-cols-md-2">
+                            <div class="col col-md-8">
+                                <pre data-start="1"><code class="language-dotnet">
+                                    public class ReVerse
+                                    {
+                                        public string StartString { get; set; }
+                                        public string RevString { get; set; }
+                                    }
+                                </code></pre>
+                            </div>
+                            <div class="col col-md-4">
+                                <h5>ReVerse model</h5>
+                                <p>
+                                    The ReVerse model holds two properties that we'll use for the application.
+                                </p>
+                                <p>
+                                    Strings of StartString and RevString for the input and output respectively.
                                 </p>
                             </div>
                         </div>
