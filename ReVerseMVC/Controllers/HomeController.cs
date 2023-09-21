@@ -22,17 +22,18 @@ namespace ReVerseMVC.Controllers
         [HttpGet]
         public IActionResult App()
         {
-            StringReverse stringRev = new();
+            ReVerse model = new();
 
-            return View(stringRev);
+            return View(model);
         }
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public IActionResult App(StringReverse input)
+        public IActionResult App(ReVerse reVerse)
         {
-            string output = "";
-            return View(output);
+            reVerse.RevString = StringReverse.GetString(reVerse);
+
+            return View(reVerse);
         }
 
         public IActionResult Code()
